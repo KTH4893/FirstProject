@@ -8,9 +8,6 @@
 </head>
 <body>
 	<%@include file="/WEB-INF/views/common/header.jsp"%>
-	<h1>텔레토비 프로젝트 시작!</h1>
-	
-	<h1>영상이형이 닭도리탕 빨리 사줬으면...</h1>
-	<a href="/views/member/rankingPage.jsp">랭킹페이지</a>
+	<h1>랭킹페이지입니다</h1>
 </body>
-</html>	
+</html>
