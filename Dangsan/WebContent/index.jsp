@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@include file="/WEB-INF/views/common/header.jsp"%>
 	<h1>텔레토비 프로젝트 시작!</h1>
 </body>
-</html>
+</html>	
