@@ -37,6 +37,7 @@
         ul li {
             text-align: center;
             background-color: blueviolet;
+			list-style: none;
 
         }
 
@@ -65,7 +66,7 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">자유게시판</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">오픈채팅</a></li>
                 <li role="presentation" class="dropdown-header" style="color: red; font-weight: bolder;">The Others</li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="/views/searchMember/searchMember.jsp">Search & Send Message</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/views/searchProfile/searchProfile.jsp">Search & Send Message</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">좋아요 투표</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Go To Payment</a></li>
             </ul>
