@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <style>
-        body {
+       .hbody {
             margin: 0 auto;
             font-size: 2.0em;
         }
@@ -29,25 +29,21 @@
             width: 80%;
         }
 
-        ul {
+        .dropdown-menu {
             padding-top: 0px;
             padding-bottom: 0px;
         }
 
-        ul li {
+        .dropdown-menu>li {
             text-align: center;
             background-color: blueviolet;
 
         }
 
-        ul li a {
+        .dropdown-menu>li>a {
             color: black;
             font-weight: bolder;
             text-decoration: none;
-        }
-
-        .inline {
-            display: inline-block;
         }
     </style>
 </head>
@@ -59,14 +55,14 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Notice</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">공지사항</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Q & A</a></li>
-                <li role="presentation" class="dropdown-header" style="color: red; font-weight: bolder;">Community</li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Free Bulletin Board</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Open Chat</a></li>
+                <li role="presentation" class="dropdown-header" style="color: red; font-weight: bolder;">커뮤니티</li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">자유게시판</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">오픈채팅</a></li>
                 <li role="presentation" class="dropdown-header" style="color: red; font-weight: bolder;">The Others</li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Search & Send Message</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Great ♥</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/views/searchMember/searchMember.jsp">Search & Send Message</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">좋아요 투표</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Go To Payment</a></li>
             </ul>
         </div>
