@@ -1,17 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-<style>
+    <style>
         body {
             margin: 0 auto;
             font-size: 2.0em;
@@ -67,12 +66,12 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Open Chat</a></li>
                 <li role="presentation" class="dropdown-header" style="color: red; font-weight: bolder;">The Others</li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Search & Send Message</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Great ¢¾</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Great â™¥</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Go To Payment</a></li>
             </ul>
         </div>
         <div class="hsection" id="center">
-            <p style="display: inline-block; margin-bottom: 0px; height: 0px; vertical-align: text-bottom; font-weight: bolder;"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ¿¹»Û ÅØ½ºÆ® ¹× ÀÌ¹ÌÁö¸¦ Ã£¾Æ¼­ ·Î°í·Î ³Ö¾î º¼±î¿ä?</p>
+            <p style="display: inline-block; margin-bottom: 0px; height: 0px; vertical-align: text-bottom; font-weight: bolder;"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ì˜ˆìœ í…ìŠ¤íŠ¸ ë° ì´ë¯¸ì§€ë¥¼ ì°¾ì•„ì„œ ë¡œê³ ë¡œ ë„£ì–´ ë³¼ê¹Œìš”?</p>
             <button type="button" class="btn btn-primary" style="float: right; margin-top: 42px; font-weight: bolder">Login Account</button>
         </div>
         <div class="hsection" id="side">
