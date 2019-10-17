@@ -4,41 +4,141 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>아만다</title>
 	<style>
-		td{
-			
+		.photo{
+			width:150px;
+			height:150px;
+			float:left;
+			display:inline-block;
+			border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
 		}
+		li div{
+			float:left;
+			padding-left : 30px;
+			font-size:18px;
+			width:55%; 
+			padding-top:10px;
+		}
+		li{
+			float:left;
+			list-style:none;
+			padding-top:50px;
+			width : 400px;
+			height : 200px;
+		}
+		
+		
 	</style>
 </head>
 <body>
 	<%@include file="/WEB-INF/views/common/header.jsp"%>
 	
 	<div class="table-wrapper" style="margin:0 auto; width:65%;text-align:center; padding-top:50px;">
-		<table class="table table-bordered">
-				<tr>
-					<th colspan="3" style="font-size:30px;font-weight:bold">회원랭킹</th>
-				</tr>
-				<tr>
-					<td>1번</td>
-					<td>2번</td>
-					<td>3번</td>
-				</tr>
-				<tr>
-					<td>4번</td>
-					<td>5번</td>
-					<td>6번</td>
-				</tr>
-				<tr>
-					<td>7번</td>
-					<td>8번</td>
-					<td>9번</td>
-				</tr>
-				<tr>
-					<td>10번</td>
-					<td>11번</td>
-					<td>12번</td>
-				</tr>
+		<table class="table table-bordered">	
+				<ul>
+					<h2>TOP 12</h2>
+				</ul>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div>안녕하세요</div><br>
+			           <div>32</div><br>
+			           <div>서울</div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<img src="/img/깡패.png" class="photo">
+			           <div> 자기소개 </div><br>
+			           <div> 나이 </div><br>
+			           <div> 주소  </div>
+					</ul>
+				</li>
+				
 		</table>
 	</div>
 </body>
