@@ -59,14 +59,14 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Notice</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">공지사항</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Q & A</a></li>
-                <li role="presentation" class="dropdown-header" style="color: red; font-weight: bolder;">Community</li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Free Bulletin Board</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Open Chat</a></li>
+                <li role="presentation" class="dropdown-header" style="color: red; font-weight: bolder;">커뮤니티</li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">자유게시판</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">오픈채팅</a></li>
                 <li role="presentation" class="dropdown-header" style="color: red; font-weight: bolder;">The Others</li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Search & Send Message</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Great ♥</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/views/searchMember/searchMember.jsp">Search & Send Message</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">좋아요 투표</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Go To Payment</a></li>
             </ul>
         </div>
