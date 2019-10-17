@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <style>
-        body {
+       .hbody {
             margin: 0 auto;
             font-size: 2.0em;
         }
@@ -29,26 +29,22 @@
             width: 80%;
         }
 
-        ul {
+        .dropdown-menu {
             padding-top: 0px;
             padding-bottom: 0px;
         }
 
-        ul li {
+        .dropdown-menu>li {
             text-align: center;
             background-color: blueviolet;
 			list-style: none;
 
         }
 
-        ul li a {
+        .dropdown-menu>li>a {
             color: black;
             font-weight: bolder;
             text-decoration: none;
-        }
-
-        .inline {
-            display: inline-block;
         }
     </style>
 </head>
