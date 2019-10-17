@@ -7,17 +7,21 @@
 <title>아무나 만난다</title>
 <style>
 	.profile-search{
-		background-color: aquamarine;
+		background-color: ;
+	}
+	li{
+		list-style:none;
 	}
 </style>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 	<section>
+	<div id="container" style="margin: 0 auto; width: 800px; color: black; text-align:center;">
 		<form action="/searchProfile" method="post" id="search-box">
-			<h1>회원검색</h1>
-			<h3>원하시는 이상형의 조건을 검색해주세요~</h3>
-			<ul>
+			<h1>회원검색</h1><br>
+			<h3>원하시는 이상형의 조건을 검색해주세요~</h3><br>
+			
 				<li><label for="addr" class="profile-search">거주지[ex)○○시]</label></li>
 				<li><input type="text" name="addr" id="addr"></li><br>
 				<li><label for="height" class="profile-search">키(cm)</label></li>
@@ -30,6 +34,7 @@
 				</li>
 			</ul>
 		</form>
+	</div>	
 	</section>
 	
 </body>

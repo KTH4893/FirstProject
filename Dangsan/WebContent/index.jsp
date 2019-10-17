@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<%@include file="/WEB-INF/views/common/header.jsp"%>
@@ -15,12 +16,12 @@
 	<h1>영상이형이 닭도리탕 빨리 사줬으면...</h1>
 <<<<<<< HEAD
 	<a href="/views/member/rankingPage.jsp">랭킹페이지 테스트</a>
-=======
+
 
 	<a href="/views/member/rankingPage.jsp">랭킹페이지</a>
 
 	<a href="/views/member/join.jsp">가입페이지</a>
 
->>>>>>> 45d3c4723fc879e36478742c370d75b87ec8636e
+
 </body>
 </html>	
