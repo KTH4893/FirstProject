@@ -22,31 +22,47 @@ public class SearchProfileServlet extends HttpServlet {
         super();
     }
 /**
- * @param : 이상형 프로피정보 (ex)addr, height
+ * @param : 이상형 프로필정보 (ex)city, height
  * @return : 적합한 회원목록(ArrayList)
  * @see : 이상형 검색 후 조건에 맞는 이상형들을 가지고 오는 메소드
  * @author : 김태환 (작성자)
- * @date : 2019-10-17 (최종수정날짜)
+ * @date : 2019-10-18 (최종수정날짜)
  * **/
+    
+    
+    //여러가지조건으로 더 검색할 수 있도록 수정하기
+    //빈값들어왔을때 대처하기
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		System.out.println("이상형찾기 Servlet 시작");
 		//2.변수저장
 		String city = request.getParameter("city");
 		int height = Integer.parseInt(request.getParameter("height"));
+		ArrayList<Profile> profileList = null;//다시 검색할때 초기화
+		//변수저장완료
 		//3.비지니스로직처리
+		if(city == "" || request.getParameter("height") == "") {
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
+			request.setAttribute("msg", "빈칸을 채워주세요~");
+			return;
+		}
+		
+		
+		
 		ProfileService service = new ProfileService();
-		ArrayList<Profile> profileList = service.searchProfile(city,height);
+		profileList = service.searchProfile(city,height);
 		
 		//조건에 맞는 프로필을 찾으면 프로필 Show로 넘어가기
 		if(profileList != null) { //조건에 맞는 프로필들이 있으면
 			System.out.println("profileList 있음");
-			RequestDispatcher rd = request.getRequestDispatcher("/views/searchProfile/showProfile.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/searchProfile/showProfileList.jsp");
 			request.setAttribute("profileList", profileList);
 			rd.forward(request, response);
 			
 		}else {//조건에 맞는 프로필이 없으면
 			System.out.println("profileList 없음");
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
+			request.setAttribute("msg", "조건에 맞는 프로필이 없어요~");
 			rd.forward(request, response);
 			
 		}

@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>아무나 만난다</title>
+<link rel=" shortcut icon" href="../../../img/favicon.ico">
 <style>
 	.profile-search{
 		background-color: ;
