@@ -16,7 +16,7 @@ public class Broadsocket {
 
 	private static Set<Session> clients = Collections
 			.synchronizedSet(new HashSet<Session>());
-
+//☆☆☆☆☆☆☆원래 했던것처럼 세션에서 객체꺼내서 아이디찾으묜댐.. 시간나면 일대일채팅 구현해보기
 	@OnMessage
 	public void onMessage(String message, Session session) throws IOException {
 		System.out.println(message);
@@ -26,6 +26,7 @@ public class Broadsocket {
 			for (Session client : clients) {
 				if (!client.equals(session)) {
 					client.getBasicRemote().sendText(message);
+					//client.getBasicRemote().sendText(message2);
 				}
 			}
 		}

@@ -216,26 +216,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%@include file="/WEB-INF/views/common/header.jsp"%>
+<h1>오픈 채팅</h1>
 <div class="queen">
-		<!-- 메세지 출력 창 -->
-		<div class="showDiv">
-			<div class="showDivIn" id="showListDiv">
-				<ul class="chatUl" id="showList">
+	<!-- 메세지 출력 창 -->
+	<div class="showDiv">
+		<div class="showDivIn" id="showListDiv">
+			<ul class="chatUl" id="showList">
 			
-				</ul>
-			</div>
-		</div>
-		<!-- 메세지 입력창 -->
-		<div class="inputDiv">
-			<div class="buttonLeftDiv">
-				<input class="textStyle" type="text" id="inputMessage">
-			</div>
-			<div class="buttonDiv">
-				<button class="submitBtn" type="submit" id="sendBtn">전 송</button>
-			</div>
+			</ul>
 		</div>
 	</div>
+	<!-- 메세지 입력창 -->
+	<div class="inputDiv">
+		<div class="buttonLeftDiv">
+				<input class="textStyle" type="text" id="inputMessage">
+		</div>
+		<div class="buttonDiv">
+			<button class="submitBtn" type="submit" id="sendBtn">전 송</button>
+		</div>
+	</div>
+</div>
+<br>
+이름입력
+<input type="text" id="inputName">
  
 </body>
   <script type="text/javascript">
@@ -256,6 +260,10 @@
       onMessage(event)
     };
     function onMessage(event) {
+    	var msg = event.data;
+    	var msg = msg.split(",")
+    	
+    	
     	var text ="";
     	//프로필영역
     	text += "<li>"
@@ -270,7 +278,7 @@
     	text += "<div class='chatDiv'>";
     	text += "<div class='nameDiv'>";
     	//!!! 현재 로그인한 아이디의 이름 넣기 !!!
-    	text += "<span class='name'>상대</span>";
+    	text += "<span class='name'>"+msg[0]+"</span>";
     	text += "</div>";
     	text += "<div class='chat'>";
     	text += "<div class='arrowDiv'>";
@@ -280,23 +288,28 @@
     	text += "<div class='bubbleDiv'>";
     	text += "<div class='bubble'>";
     	//채팅입력한 내용
-    	text += event.data;
+    	text += msg[1];
     	text += "</div></div></div></div></div>";
     	text += "</li>";
     	$("#showList").append(text);
     	$("#showListDiv").scrollTop($("#showListDiv")[0].scrollHeight);
     	
     	
-        textarea.value += "상대 : " + event.data + "\n";
+       // textarea.value += "상대 : " + event.data + "\n";
     }
     function onOpen(event) {
-        textarea.value += "연결 성공\n";
+       // textarea.value += "연결 성공\n";
     }
     function onError(event) {
       alert(event.data);
     }
    
     $("#sendBtn").click(function(){
+    	if($("#inputMessage").val()==""){
+    		alert("메세지를 입력하세요");
+    		return;
+    	}
+    	var name = $("#inputName").val();
     	var text ="";
     	//프로필영역
     	text += "<li>"
@@ -311,7 +324,7 @@
     	text += "<div class='chatDiv'>";
     	text += "<div class='nameDiv'>";
     	//!!! 현재 로그인한 아이디의 이름 넣기 !!!
-    	text += "<span class='name'>나나나</span>";
+    	text += "<span class='name'>"+name+"</span>";
     	text += "</div>";
     	text += "<div class='chat'>";
     	text += "<div class='arrowDiv'>";
@@ -329,8 +342,8 @@
     
     	$("#showListDiv").scrollTop($("#showListDiv")[0].scrollHeight);
 
-
-         webSocket.send(inputMessage.value);
+		
+         webSocket.send(name+","+inputMessage.value);
          inputMessage.value = "";
     });
   </script>
