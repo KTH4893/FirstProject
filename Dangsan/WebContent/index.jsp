@@ -20,7 +20,6 @@
 	<a href="/views/member/rankingPage.jsp">랭킹페이지 테스트</a>
 
 
-	<a href="/views/member/rankingPage.jsp">랭킹페이지</a>
 
 	<a href="/views/member/join.jsp">가입페이지</a>
 
