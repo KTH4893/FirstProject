@@ -7,22 +7,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.kh.common.JDBCTemplate;
+import com.kh.member.model.vo.MemberPage;
 import com.kh.member.model.vo.Profile;
 
 public class MemberDao {
 
-	public ArrayList<Profile> rankingView(Connection conn) {
+	public ArrayList<MemberPage> rankingView(Connection conn) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		ArrayList<Profile> list = new ArrayList<Profile>();
+		ArrayList<MemberPage> list = new ArrayList<MemberPage>();
 		System.out.println("여기");
-		String query = "select * from ( select * from profile order by heart desc ) where ROWNUM <= 12";
+		String query = "select * from (select * from member join profile using(member_id) order by heart desc) where rownum <= 12";
 		try {
 			pstmt = conn.prepareStatement(query);
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
+				System.out.println("여기");
 				Profile p = new Profile();
-				p.setId(rset.getString("profile_id"));
+				p.setId(rset.getString("member_id"));
 				p.setBlood(rset.getString("blood"));
 				p.setCity(rset.getString("city"));
 				p.setHeart(rset.getInt("heart"));
@@ -32,9 +34,14 @@ public class MemberDao {
 				p.setJob(rset.getString("profile_job"));
 				p.setReligion(rset.getString("religion"));
 				p.setSmoke(rset.getString("smoke"));
-				p.setAge(rset.getInt("age"));
-				list.add(p);
-			}
+				MemberPage mp = new MemberPage();
+				mp.setProfile(p);
+				mp.setAge(rset.getInt("age"));
+				mp.setCity(rset.getString("city"));
+				mp.setPhoto(rset.getString("photopath"));
+				mp.setHeart(rset.getInt("heart"));
+				list.add(mp);
+				}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -1,9 +1,10 @@
+<%@page import="com.kh.member.model.vo.MemberPage"%>
 <%@page import="com.kh.member.model.vo.Profile"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-    	ArrayList<Profile> list = (ArrayList)request.getAttribute("list");
+    	ArrayList<MemberPage> list = (ArrayList)request.getAttribute("list");
     %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -50,13 +51,13 @@
 	<section>
 		<h1 style="text-align:center;">랭커회원</h1>
 		<br>
-		<% for(Profile p : list){ %>
+		<% for(MemberPage p : list){ %>
 		<div style="width:400px;height:200px; margin:0 auto; box-sizing: border-box;" class="all">
 			<div style="width:40%;height:100%; float:left;">
-				<img class="img" src="/img/깡패.png" style="width:90%;height:80%;">
+				<img class="img" src="/img/아이린2.jpg" style="width:90%;height:80%;">
 			</div>
 			<div style="width:60%;height:100%; float:left;">
-				<div style="width:100%; height:50%;padding-left:10px;padding-top:15px;"><%=p.getIntro().substring(0,40)+"..." %></div>
+				<div style="width:100%; height:50%;padding-left:10px;padding-top:15px;"><%=p.getProfile().getIntro().substring(0,44)+"..." %></div>
 				<div style="width:100%; height:50%;">
 					<div style="width:50%;height:100%;float:left;">
 						<div style="width:100%;height:30%;padding-left:10px;padding-bottom:15px;">나이 : <%=p.getAge() %></div>

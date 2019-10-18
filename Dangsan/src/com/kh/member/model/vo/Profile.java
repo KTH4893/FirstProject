@@ -11,16 +11,12 @@ public class Profile {
 	private String religion;
 	private String smoke;
 	private String city;
-	private int age;
-	private String photoName;
-	private String photoPath;
-	
 	public Profile() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public Profile(String id, String intro, int height, String blood, String job, String hobby, int heart,
-			String religion, String smoke, String city, int age, String photoName, String photoPath) {
+			String religion, String smoke, String city) {
 		super();
 		Id = id;
 		this.intro = intro;
@@ -32,9 +28,6 @@ public class Profile {
 		this.religion = religion;
 		this.smoke = smoke;
 		this.city = city;
-		this.age = age;
-		this.photoName = photoName;
-		this.photoPath = photoPath;
 	}
 	public String getId() {
 		return Id;
@@ -96,25 +89,6 @@ public class Profile {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public String getPhotoName() {
-		return photoName;
-	}
-	public void setPhotoName(String photoName) {
-		this.photoName = photoName;
-	}
-	public String getPhotoPath() {
-		return photoPath;
-	}
-	public void setPhotoPath(String photoPath) {
-		this.photoPath = photoPath;
-	}
-	
-	
+
 	
 }
