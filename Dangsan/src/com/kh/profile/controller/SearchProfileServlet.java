@@ -37,21 +37,19 @@ public class SearchProfileServlet extends HttpServlet {
 		ProfileService service = new ProfileService();
 		ArrayList<Profile> profileList = service.searchProfile(city,height);
 		
-		
-		
-		//4.view처리
-//		if(m!=null) {
-//			HttpSession session = request.getSession();
-//			session.setAttribute("member", m);
-//			request.setAttribute("msg", "로그인성공");
-//		}else {
-//			request.setAttribute("msg", "로그인실패");
-//		}
-		request.setAttribute("loc", "/showProfile.jsp");
-		
-		//-> 경로로 페이지 이동 -> url에 msg.jsp가 안뜨고 지정한 서블렛이름이 뜬다 !! (login)
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
-		rd.forward(request, response);
+		//조건에 맞는 프로필을 찾으면 프로필 Show로 넘어가기
+		if(profileList != null) { //조건에 맞는 프로필들이 있으면
+			System.out.println("profileList 있음");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/searchProfile/showProfile.jsp");
+			request.setAttribute("profileList", profileList);
+			rd.forward(request, response);
+			
+		}else {//조건에 맞는 프로필이 없으면
+			System.out.println("profileList 없음");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
+			rd.forward(request, response);
+			
+		}
 		System.out.println("이상형찾기 Servlet 끝");
 		
 	

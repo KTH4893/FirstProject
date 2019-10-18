@@ -23,7 +23,7 @@
 			<h3>원하시는 이상형의 조건을 검색해주세요~</h3><br>
 			
 				<li><label for="addr" class="profile-search">거주지[ex)○○시]</label></li>
-				<li><input type="text" name="addr" id="addr"></li><br>
+				<li><input type="text" name="city" id="city"></li><br>
 				<li><label for="height" class="profile-search">키(cm)</label></li>
 				<li><input type="text" name="height" id="height"></li><br>
 				<li id="btn-wrapper">
