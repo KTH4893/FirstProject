@@ -35,10 +35,14 @@ public class SearchProfileListServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		ProfileService service = new ProfileService();
 		ArrayList<Profile> list = new ArrayList<Profile>();
+		Ideal i = null;
 		String religion = request.getParameter("religion");
 		String heightStr = request.getParameter("height");
+		String smoke = request.getParameter("smoke");
+		String city = request.getParameter("city");
 		//~150, 150~180, 180~ 세개로 나눠 값받아야함
 		StringTokenizer st = new StringTokenizer(heightStr,"~");
+		System.out.println(3333);
 		//150, (150,160), (160,170), (170,180),180
 		if(st.countTokens()==1) {	// int값 한개만 들어오면 150cm아님 180cm면
 			int height = Integer.parseInt(st.nextToken());
@@ -50,13 +54,10 @@ public class SearchProfileListServlet extends HttpServlet {
 		}
 		
 		
+		System.out.println(religion + "," + heightStr + "," + smoke + "," + city);
+		i = new Ideal(religion, heightStr, smoke, city);
 		
-		
-		
-		String smoke = request.getParameter("smoke");
-		String city = request.getParameter("city");
-		Ideal i = new Ideal(religion, heightStr, smoke, city);
-		
+		System.out.println(religion + "," + heightStr + "," + smoke + "," + city);
 		
 		
 		
