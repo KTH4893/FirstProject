@@ -11,19 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.kh.message.model.service.MessageService;
-import com.kh.message.model.vo.MessageViewPageData;
 
 /**
- * Servlet implementation class MessageViewServlet
+ * Servlet implementation class MessageInsertServlet
  */
-@WebServlet(name = "MessageView", urlPatterns = { "/messageView" })
-public class MessageViewServlet extends HttpServlet {
+@WebServlet(name = "MessageInsert", urlPatterns = { "/messageInsert" })
+public class MessageInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MessageViewServlet() {
+    public MessageInsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,27 +31,28 @@ public class MessageViewServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//파라미터가져오기
-		//보내는사람id, 받는사람id
-		//보내는사람
+		//쪽지 보내기
+		
+		//파라미터
+		//보내는사람 id
 		HttpSession session = request.getSession(false);
 		String msgFromId = session.getAttribute("");
 		//받는사람
 		String msgToId = "";
-		//요청페이지
-		int reqPage;
-		try {
-			reqPage = Integer.parseInt(request.getParameter("reqPage"));
-		}catch(NumberFormatException e) {
-			reqPage = 1;
-		}
+		//내용
+		String msgContent = "";
+		
 		//비지니스로직
 		MessageService service = new MessageService();
-		MessageViewPageData pd = service.selectSendRecMessage(reqPage, msgToId, msgFromId);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/message/messageView.jsp");
-		request.setAttribute("pd", pd);
+		int result = service.insertMessage(msgToId, msgFromId, msgContent);
+		if(result>0) {
+			request.setAttribute("msg", "성공적으로 쪽지를 보냈습니다");
+			request.setAttribute("loc", "/messageList");
+		}else {
+			request.setAttribute("msg", "쪽지 보내기를 실패했습니다...");
+			request.setAttribute("loc", "/messageList");
+		}
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 		rd.forward(request, response);
 	}
 

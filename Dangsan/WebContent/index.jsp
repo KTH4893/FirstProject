@@ -23,7 +23,7 @@
 >>>>>>> 45d3c4723fc879e36478742c370d75b87ec8636e
 
 <!-- 하영테스트 -->
-<br>
-<a href="/WEB-INF/views/message/messageView">쪽지보기</a>
+<br><br><br>
+<a href="/messageList">쪽지목록</a>
 </body>
 </html>	

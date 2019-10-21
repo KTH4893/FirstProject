@@ -5,10 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel= "stylesheet" type="text/css" href="/css/message/messageView.css">
 </head>
 <body>
+<!-- 한사람과 주고받은 쪽지를 볼 수 있는 페이지 -->
+
 <%@include file="/WEB-INF/views/common/header.jsp"%>
 
+<br>
 <!-- 쪽지함 -->
 <div class="queen">
 	<div class="head">
@@ -38,6 +42,7 @@
 	</div>
 </div>
 
+<!-- 페이지네비 만들어야함 -->
 
 
 </body>

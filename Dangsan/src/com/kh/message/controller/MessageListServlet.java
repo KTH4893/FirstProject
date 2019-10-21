@@ -11,19 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.kh.message.model.service.MessageService;
-import com.kh.message.model.vo.MessageViewPageData;
+import com.kh.message.model.vo.MessageNoReadPageData;
 
 /**
- * Servlet implementation class MessageViewServlet
+ * Servlet implementation class MessageListServlet
  */
-@WebServlet(name = "MessageView", urlPatterns = { "/messageView" })
-public class MessageViewServlet extends HttpServlet {
+@WebServlet(name = "MessageList", urlPatterns = { "/messageList" })
+public class MessageListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MessageViewServlet() {
+    public MessageListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,14 +32,12 @@ public class MessageViewServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//파라미터가져오기
-		//보내는사람id, 받는사람id
-		//보내는사람
+		//안읽은 받은 메세지 목록 불러오기
+		
+		//파라미터
+		//현재 로그인한 아이디
 		HttpSession session = request.getSession(false);
-		String msgFromId = session.getAttribute("");
-		//받는사람
-		String msgToId = "";
+		String id = session.getAttribute("");
 		//요청페이지
 		int reqPage;
 		try {
@@ -49,9 +47,10 @@ public class MessageViewServlet extends HttpServlet {
 		}
 		//비지니스로직
 		MessageService service = new MessageService();
-		MessageViewPageData pd = service.selectSendRecMessage(reqPage, msgToId, msgFromId);
+		MessageNoReadPageData pd = service.selectNoReadList(id, reqPage);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/message/messageView.jsp");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/message/messageList.jsp");
 		request.setAttribute("pd", pd);
 		rd.forward(request, response);
 	}
