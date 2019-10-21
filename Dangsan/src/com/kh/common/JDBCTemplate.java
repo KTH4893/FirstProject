@@ -12,17 +12,15 @@ public class JDBCTemplate {
 
 	public JDBCTemplate() {
 	}
-	//Connection 객체 생성 메소드
+	//Connection 媛앹껜 �깮�꽦 硫붿냼�뱶
 	public static Connection getConnection() {
 		Connection conn = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-<<<<<<< HEAD
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.40.26:1521:xe","dangsanproject","1234");
-=======
+			
+			
+//			conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.40.26:1521:xe","dangsanproject","1234");
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","dangsan","1234");
->>>>>>> d2ea2537b9be55e62062b94e1074354f41cb6858
-			//자동으로 commit을 지원해주는 기능을 해제
 			conn.setAutoCommit(false);
 			
 		} catch (ClassNotFoundException e) {
@@ -36,7 +34,7 @@ public class JDBCTemplate {
 		
 	}
 	
-	//커넥션소멸
+	//而ㅻ꽖�뀡�냼硫�
 	public static void close(Connection conn) {
 		
 		try {
@@ -49,7 +47,7 @@ public class JDBCTemplate {
 		}
 	}
 	
-	//커밋용메소드
+	//而ㅻ컠�슜硫붿냼�뱶
 	public static void commit(Connection conn) {
 		try {
 			if(conn !=null & !conn.isClosed()) {
@@ -61,7 +59,7 @@ public class JDBCTemplate {
 		}
 	}
 	
-	//롤백
+	//濡ㅻ갚
 	public static void rollback(Connection conn) {
 		try {
 			if(conn != null && !conn.isClosed()) {
@@ -85,7 +83,7 @@ public class JDBCTemplate {
 		}
 	}
 	
-	//PreparedStatement는 Statement를 상속한 자식이여서 위에 메소드를 다형성을 이용해서 사용할 수 있다.!
+	//PreparedStatement�뒗 Statement瑜� �긽�냽�븳 �옄�떇�씠�뿬�꽌 �쐞�뿉 硫붿냼�뱶瑜� �떎�삎�꽦�쓣 �씠�슜�빐�꽌 �궗�슜�븷 �닔 �엳�떎.!
 //	public void close(PreparedStatement pstmt) {
 //			try {
 //				if(pstmt != null && !pstmt.isClosed()) {
