@@ -17,8 +17,14 @@
 	
 	<h1>영상이형이 닭도리탕 빨리 사줬으면...</h1>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<a href="/views/member/rankingPage.jsp">랭킹페이지 테스트</a>
 
+=======
+	<a href="/rankingView">랭킹페이지 테스트</a><br>
+	<a href="/views/member/randomPage.jsp">좋아요페이지 테스트</a>
+=======
+>>>>>>> d2ea2537b9be55e62062b94e1074354f41cb6858
 
 
 	<a href="/views/member/join.jsp">가입페이지</a>
