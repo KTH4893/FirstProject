@@ -22,5 +22,9 @@
 	<a href="/views/member/join.jsp">가입페이지</a>
 
 >>>>>>> 45d3c4723fc879e36478742c370d75b87ec8636e
+
+<!-- 하영테스트 -->
+<br><br><br>
+<a href="/messageList">쪽지목록</a>
 </body>
 </html>	
