@@ -33,25 +33,21 @@ public class MessageListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//안읽은 받은 메세지 목록 불러오기
-		
+		System.out.println("ㅇㅅㅇ");
 		//파라미터
 		//현재 로그인한 아이디
-		HttpSession session = request.getSession(false);
-		String id = session.getAttribute("");
-		//요청페이지
-		int reqPage;
-		try {
-			reqPage = Integer.parseInt(request.getParameter("reqPage"));
-		}catch(NumberFormatException e) {
-			reqPage = 1;
-		}
-		//비지니스로직
-		MessageService service = new MessageService();
-		MessageNoReadPageData pd = service.selectNoReadList(id, reqPage);
+		/*
+		 * HttpSession session = request.getSession(false); String id =
+		 * session.getAttribute(""); //요청페이지 int reqPage; try { reqPage =
+		 * Integer.parseInt(request.getParameter("reqPage"));
+		 * }catch(NumberFormatException e) { reqPage = 1; } //비지니스로직 MessageService
+		 * service = new MessageService(); MessageNoReadPageData pd =
+		 * service.selectNoReadList(id, reqPage);
+		 */
 		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/message/messageList.jsp");
-		request.setAttribute("pd", pd);
+		//request.setAttribute("pd", pd);
 		rd.forward(request, response);
 	}
 
