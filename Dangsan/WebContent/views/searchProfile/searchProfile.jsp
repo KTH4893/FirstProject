@@ -5,17 +5,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>아무나 만난다</title>
+<link rel=" shortcut icon" href="../../../img/favicon.ico">
+<style>
+	.profile-search{
+		background-color: ;
+	}
+	li{
+		list-style:none;
+	}
+</style>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 	<section>
-		<form action="/searchMember" method="post" id="search-box">
-			<h1>회원검색</h1>
-			<h3>원하시는 이상형의 조건을 검색해주세요~</h3>
-			<ul>
-				<li><label for="addr">거주지[ex)○○시]</label></li>
-				<li><input type="text" name="addr" id="addr"></li><br>
-				<li><label for="height">키(cm)</label></li>
+	<div id="container" style="margin: 0 auto; width: 800px; color: black; text-align:center;">
+		<form action="/searchProfile" method="post" id="search-box">
+			<h1>회원검색</h1><br>
+			<h3>원하시는 이상형의 조건을 검색해주세요~</h3><br>
+			
+				<li><label for="addr" class="profile-search">거주지[ex)○○시]</label></li>
+				<li><input type="text" name="city" id="city"></li><br>
+				<li><label for="height" class="profile-search">키(cm)</label></li>
 				<li><input type="text" name="height" id="height"></li><br>
 				<li id="btn-wrapper">
 					<br>
@@ -25,6 +35,7 @@
 				</li>
 			</ul>
 		</form>
+	</div>	
 	</section>
 	
 </body>

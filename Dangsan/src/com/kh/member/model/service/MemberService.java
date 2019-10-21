@@ -1,5 +1,12 @@
 package com.kh.member.model.service;
 
+<<<<<<< HEAD
+public class MemberService {
+
+	
+
+}
+=======
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -97,3 +104,4 @@ public class MemberService {
 	}
 
 
+>>>>>>> d2ea2537b9be55e62062b94e1074354f41cb6858

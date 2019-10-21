@@ -1,5 +1,11 @@
 package com.kh.member.model.dao;
 
+<<<<<<< HEAD
+public class MemberDao {
+
+	
+
+=======
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -204,4 +210,5 @@ public class MemberDao {
 		return result;
 	}
 	
+>>>>>>> d2ea2537b9be55e62062b94e1074354f41cb6858
 }
