@@ -19,42 +19,53 @@ import com.kh.message.model.vo.MessageNoReadPageData;
 @WebServlet(name = "MessageList", urlPatterns = { "/messageList" })
 public class MessageListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MessageListServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//안읽은 받은 메세지 목록 불러오기
+	public MessageListServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 안읽은 받은 메세지 목록 불러오기
 		System.out.println("ㅇㅅㅇ");
-		//파라미터
-		//현재 로그인한 아이디
-		/*
-		 * HttpSession session = request.getSession(false); String id =
-		 * session.getAttribute(""); //요청페이지 int reqPage; try { reqPage =
-		 * Integer.parseInt(request.getParameter("reqPage"));
-		 * }catch(NumberFormatException e) { reqPage = 1; } //비지니스로직 MessageService
-		 * service = new MessageService(); MessageNoReadPageData pd =
-		 * service.selectNoReadList(id, reqPage);
-		 */
-		
-		
+		// 파라미터
+		// 현재 로그인한 아이디
+		HttpSession session = request.getSession(false);
+		//String id = session.getAttribute("");
+		String id = "test01";
+
+		// 요청페이지
+		int reqPage;
+		try {
+			reqPage = Integer.parseInt(request.getParameter("reqPage"));
+
+		} catch (NumberFormatException e) {
+			reqPage = 1;
+		}
+
+		// 비지니스로직 
+		MessageService service = new MessageService();
+		MessageNoReadPageData pd = service.selectNoReadList(id, reqPage);
+
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/message/messageList.jsp");
-		//request.setAttribute("pd", pd);
+		request.setAttribute("pd", pd);
 		rd.forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

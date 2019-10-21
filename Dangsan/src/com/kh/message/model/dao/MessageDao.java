@@ -86,7 +86,7 @@ public class MessageDao {
 	public int insertMessage(Connection conn, String msgToId, String msgFromId, String msgContent) {
 		PreparedStatement pstmt = null;
 		int result = 0;
-		String query = "insert into message values (message_seq.nextVal,?,?,?,sysdate,'x');";
+		String query = "insert into message values (message_seq.nextVal,?,?,?,sysdate,'x')";
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, msgFromId);

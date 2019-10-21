@@ -23,8 +23,8 @@
 	</div>
 	<form action="/messageInsert">
 		<!-- 히든(현재로그인한 아이디, 받는사람아이디) -->
-		<input type="hidden" value="" name="msgFromId">
-		<input type="hidden" value="" name="msgToId">
+		<input type="hidden" value="admin" name="msgFromId">
+		<input type="hidden" value="test01" name="msgToId">
 		<div class="msg-contentDiv">
 			<textarea class="msg-textarea" cols="60" rows="8" name="msgContent" ></textarea>
 		</div>

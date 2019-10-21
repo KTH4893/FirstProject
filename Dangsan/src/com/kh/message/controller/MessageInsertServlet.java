@@ -36,11 +36,15 @@ public class MessageInsertServlet extends HttpServlet {
 		//파라미터
 		//보내는사람 id
 		HttpSession session = request.getSession(false);
-		String msgFromId = session.getAttribute("");
+		//String msgFromId = session.getAttribute("");
+		String msgFromId = request.getParameter("msgFromId");
 		//받는사람
-		String msgToId = "";
+		String msgToId =  request.getParameter("msgToId");
 		//내용
-		String msgContent = "";
+		String msgContent = request.getParameter("msgContent");
+		System.out.println(msgFromId);
+		System.out.println(msgToId);
+		System.out.println(msgContent);
 		
 		//비지니스로직
 		MessageService service = new MessageService();
