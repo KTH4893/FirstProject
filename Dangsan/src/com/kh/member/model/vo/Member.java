@@ -12,10 +12,21 @@ public class Member {
 	private String email;
 	private String grade;
 	private Date enrollDate;
+<<<<<<< HEAD
+	private int age; 
+	private int blockCount;
+	private String photopath;
+	private String photoname;
+=======
 	private int age;
 	private int blockCount;
 	private String photopath;
 	private String photoname;
+<<<<<<< HEAD
+=======
+	
+>>>>>>> d2ea2537b9be55e62062b94e1074354f41cb6858
+>>>>>>> ee340be8a12028d82746491911757d9be61f64d7
 	public Member() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -117,6 +128,13 @@ public class Member {
 	}
 	
 	
+<<<<<<< HEAD
 	
 	
+=======
+<<<<<<< HEAD
+	
+=======
+>>>>>>> d2ea2537b9be55e62062b94e1074354f41cb6858
+>>>>>>> ee340be8a12028d82746491911757d9be61f64d7
 }

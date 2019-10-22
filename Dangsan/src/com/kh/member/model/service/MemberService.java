@@ -1,5 +1,12 @@
 package com.kh.member.model.service;
 
+<<<<<<< HEAD
+public class MemberService {
+
+	
+
+}
+=======
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,20 +47,73 @@ public class MemberService {
         return list;
     }
 
+<<<<<<< HEAD
 	public int insertHeart(String toId, String fromId) {
 		Connection conn = JDBCTemplate.getConnection();
 		MemberDao dao = new MemberDao();
 		int result = dao.insertHeart(conn,toId,fromId);
+=======
+	public int insertMember(Member m) {
+		Connection conn = JDBCTemplate.getConnection();
+		MemberDao dao = new MemberDao();
+		int result = dao.insertMember(conn, m);
+>>>>>>> ee340be8a12028d82746491911757d9be61f64d7
 		if(result>0) {
 			JDBCTemplate.commit(conn);
 		}else {
 			JDBCTemplate.rollback(conn);
 		}
+<<<<<<< HEAD
 		return result;
 	}
 	
+=======
+		JDBCTemplate.close(conn);
+		return result;
+		
+	}
+
+	public Member selectOne(String id) {
+		Connection conn = JDBCTemplate.getConnection();
+		MemberDao dao = new MemberDao();
+		Member m = dao.selectOne(conn, id);
+		JDBCTemplate.close(conn);
+		return m;
+	}
+
+	public int selectEmail(String emailAddr) {
+		Connection conn = JDBCTemplate.getConnection();
+		MemberDao dao = new MemberDao();
+		int result = dao.selectEmail(conn, emailAddr);
+		JDBCTemplate.close(conn);
+		return result;
+	}
+
+	public Member login(String id, String pw) {
+		Connection conn = JDBCTemplate.getConnection();
+		MemberDao dao = new MemberDao();
+		Member m = dao.login(conn, id, pw);
+		JDBCTemplate.close(conn);
+		return m;
+	
+	}
+
+	public int delete(String id) {
+		Connection conn = JDBCTemplate.getConnection();
+		MemberDao dao = new MemberDao();
+		int result = dao.delete(conn, id);
+		if(result>0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		return result;
+	}
+>>>>>>> ee340be8a12028d82746491911757d9be61f64d7
 	
 		
 }
 
 
+>>>>>>> d2ea2537b9be55e62062b94e1074354f41cb6858
