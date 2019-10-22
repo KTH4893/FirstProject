@@ -61,14 +61,13 @@
 				<div style="width:100%; height:50%;">
 					<div style="width:50%;height:100%;float:left;">
 						<div style="width:100%;height:30%;padding-left:10px;padding-bottom:15px;">나이 : <%=p.getAge() %></div>
-						<div style="width:100%;height:70%;padding-left:10px;padding-bottom:20px;">주소 : <%=p.getCity() %></div>
+						<div style="width:100%;height:70%;padding-left:10px;padding-bottom:20px;">주소 : <%=p.getProfile().getCity() %></div>
 					</div>
 					<div style="width:50%;height:70%;float:left;padding-top:30px;" >
 						<b class="num">추천수 : <%=p.getHeart() %></b>
 					</div>
 				</div>
 			</div>
-			
 		</div>
 		<%} %>				
 	</section>

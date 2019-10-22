@@ -20,11 +20,12 @@ public class MemberService {
 		return list;
 	}
 
-	public void randomView() {
+	public ArrayList<MemberPage> randomView() {
+		Connection conn = JDBCTemplate.getConnection();
+		MemberDao dao = new MemberDao();
 		int lotto[] = new int[12];
-        ArrayList<String> num = new ArrayList<>();
         for(int i=0; i<lotto.length; i++) {
-            lotto[i] = (int)(Math.random()*45)+1;
+            lotto[i] = (int)(Math.random()*22)+1;
             for (int j = 0; j < i; j++) {
                 if(lotto[i] == lotto[j]) {
                     i--;
@@ -32,17 +33,27 @@ public class MemberService {
                 }
             }
         }
-        Arrays.sort(lotto);
-        for (int i = 0; i < lotto.length; i++) {
-        	
-            System.out.print("[" + lotto[i] + "] ");
+        for(int i=0;i<lotto.length;i++) {
+        	System.out.println(lotto[i]);
         }
-        System.out.println(" 입니다.");
-        
+        ArrayList<MemberPage> list = dao.randomView(conn,lotto);
+        return list;
     }
 
+	public int insertHeart(String toId, String fromId) {
+		Connection conn = JDBCTemplate.getConnection();
+		MemberDao dao = new MemberDao();
+		int result = dao.insertHeart(conn,toId,fromId);
+		if(result>0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		return result;
+	}
+	
 	
 		
-	}
+}
 
 

@@ -11,6 +11,7 @@ public class Profile {
 	private String religion;
 	private String smoke;
 	private String city;
+	
 	public Profile() {
 		super();
 		// TODO Auto-generated constructor stub

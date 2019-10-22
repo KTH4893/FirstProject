@@ -10,19 +10,17 @@ public class Member {
 	private String gender;
 	private String phone;
 	private String email;
-	private String city;
 	private String grade;
 	private Date enrollDate;
 	private int age;
 	private int blockCount;
 	private String photopath;
 	private String photoname;
-	
 	public Member() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Member(String id, String pw, String name, Date birth, String gender, String phone, String email, String city,
+	public Member(String id, String pw, String name, Date birth, String gender, String phone, String email,
 			String grade, Date enrollDate, int age, int blockCount, String photopath, String photoname) {
 		super();
 		this.id = id;
@@ -32,7 +30,6 @@ public class Member {
 		this.gender = gender;
 		this.phone = phone;
 		this.email = email;
-		this.city = city;
 		this.grade = grade;
 		this.enrollDate = enrollDate;
 		this.age = age;
@@ -82,12 +79,6 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
 	public String getGrade() {
 		return grade;
 	}
@@ -124,6 +115,8 @@ public class Member {
 	public void setPhotoname(String photoname) {
 		this.photoname = photoname;
 	}
+	
+	
 	
 	
 }
